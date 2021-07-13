@@ -1,0 +1,43 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.main {
+  background: rgb(15, 15, 15);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  mat-card {
+    width: 600px;
+
+    mat-card-title {
+      font-size: 20px;
+      margin-bottom: 15px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .input-mom {
+      display: flex;
+      justify-content: center;
+      margin: 30px 0;
+    }
+
+    button {
+      margin-left: 20px;
+      height: 40px;
+      align-self: center;
+    }
+  }
+
+  .address-fields {
+    .single-field {
+      .label {
+        font-weight: bold;
+        font-size: 17px
+      }
+    }
+  }
+}
