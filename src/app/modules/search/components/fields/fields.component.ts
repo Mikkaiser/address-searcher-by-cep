@@ -9,17 +9,20 @@ import { Component, OnInit } from '@angular/core';
 export class FieldsComponent implements OnInit {
   constructor(private fieldsService: FieldsService) {}
 
-
   ngOnInit(): void {}
 
-  getData(value: any): any {
-    //this function will be created later
+  getData(value: any, form: any): any {
     this.fieldsService
       .getData(value)
       .subscribe((data: any) => this.insertOnFields(data, form));
   }
 
   insertOnFields(data: any, form: any) {
-   
+    form.setValue({
+      logradouro: data.logradouro,
+      bairro: data.bairro,
+      cidade: data.localidade,
+      uf: data.uf
+    });
   }
 }

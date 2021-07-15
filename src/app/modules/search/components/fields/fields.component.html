@@ -1,0 +1,27 @@
+<form #form="ngForm">
+  <div>
+    <br><br>
+    <label>CEP:</label>
+    <input type="text" ngModel #cep="ngModel" (blur)="getData(event.target, form)">
+  </div>
+
+  <div>
+    <label>Logradouro</label>
+    <input type="text" ngModel #logradouro="ngModel">
+  </div>
+
+  <div>
+    <label>Bairro</label>
+    <input type="text" ngModel #bairro="ngModel">
+  </div>
+
+  <div>
+    <label>Cidade</label>
+    <input type="text" ngModel #cidade="ngModel">
+  </div>
+
+  <div>
+    <label>UF</label>
+    <input type="text" ngModel #uf="ngModel">
+  </div>
+</form>

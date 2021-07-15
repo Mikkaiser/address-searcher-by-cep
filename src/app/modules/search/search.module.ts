@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FieldsComponent } from './components/fields/fields.component';
+import { FormsModule } from '@angular/forms';
 import { SearchRoutingModule } from './search-routing.module';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
@@ -13,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     CommonModule,
     HttpClientModule,
+    FormsModule,
     SearchRoutingModule,
     MatFormFieldModule,
     MatCardModule,
