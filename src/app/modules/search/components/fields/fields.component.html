@@ -1,3 +1,6 @@
-<input type="text" #cep>
-<button (click)="getData(cep.value)">Click</button>
-<span>informaition: {{ info.localidade }}</span>
+<app-mat-dialog [info]="info"></app-mat-dialog>
+<mat-card>
+  <mat-card-title>Find your address by your CEP</mat-card-title>
+  <input type="text" #cep>
+  <button (click)="getData(cep.value)">Detalhes do seu endereço</button>
+</mat-card>

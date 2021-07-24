@@ -1,8 +1,7 @@
-import { FieldsInterface } from './../../interfaces/fields.interface';
 import { FieldsService } from './fields.service';
-import { Component, OnInit } from '@angular/core';
-import { Form } from '@angular/forms';
-import { Observable } from 'rxjs';
+import {Component, Output, OnInit} from '@angular/core';
+import {MatDialog} from "@angular/material/dialog";
+import {MatDialogComponent} from "../mat-dialog/mat-dialog.component";
 
 @Component({
   selector: 'app-fields',
@@ -10,14 +9,24 @@ import { Observable } from 'rxjs';
   styleUrls: ['./fields.component.scss'],
 })
 export class FieldsComponent implements OnInit {
-  constructor(private fieldsService: FieldsService) {}
+  constructor(private fieldsService: FieldsService, public dialog: MatDialog) {}
 
-  info?: any; 
+  @Output()
+  info?: any;
 
   ngOnInit(): void {}
 
+  openDialog(): void {
+    const dialogRef = this.dialog.open(MatDialogComponent, {
+      width: '250px'
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
+  }
 
-  getData(cep: string): Observable<> {
+  getData(cep: string) {
+    this.openDialog();
     return this.fieldsService.getData(cep).subscribe((data: any) => this.info = data);
   }
 }
