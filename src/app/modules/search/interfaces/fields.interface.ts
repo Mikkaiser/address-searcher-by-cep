@@ -1,5 +1,5 @@
 export interface FieldsInterface {
-  cep: string,
+  cep?: string,
   logradouro?: string,
   complemento?: string,
   bairro?: string,

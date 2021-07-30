@@ -1,6 +1,41 @@
-<mat-card>
-  <mat-card-title>Find your address by your CEP</mat-card-title>
-  <input type="text" #cep>
-    <button (click)="getData(cep.value)">Detalhes do seu endereço</button>
-</mat-card>
-<!-- MEXA NO CORS -->
+<div class="main">
+  <mat-card class="card-insert">
+    <div>
+      <mat-card-title>Find your address by your CEP</mat-card-title>
+      <mat-form-field>
+        <input matInput type="text" #cep placeholder="Type Your CEP">
+      </mat-form-field>
+      <button mat-raised-button color="accent" (click)="getData(cep.value)">Detalhes do seu endereço</button>
+    </div>
+  </mat-card>
+  
+  <section *ngIf="clickedFirstTime == true">
+    <div>
+      <mat-card>
+        <mat-card-title>CEP</mat-card-title>
+        <span>{{ info.cep }}</span>
+      </mat-card>
+    </div>
+  
+    <div>
+      <mat-card>
+        <mat-card-title>Logradouro</mat-card-title>
+        <span>{{ info.logradouro }}</span>
+      </mat-card>
+    </div>
+  
+    <div>
+      <mat-card>
+        <mat-card-title>Bairro</mat-card-title>
+        <span>{{ info.bairro }}</span>
+      </mat-card>
+    </div>
+  
+    <div>
+      <mat-card>
+        <mat-card-title>CEP</mat-card-title>
+        <span>{{ info.localidade }}</span>
+      </mat-card>
+    </div>
+  </section>
+</div>
