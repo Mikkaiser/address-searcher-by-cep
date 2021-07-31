@@ -12,17 +12,13 @@ export class FieldsComponent implements OnInit {
   constructor(private fieldsService: FieldsService) { }
 
   info?: any;
-  clickedFirstTime: boolean = false;
 
   ngOnInit(): void {
   }
 
   async getData(cep: string): Promise<FieldsInterface> {
-
-    this.clickedFirstTime = true;
-
     return await this.fieldsService.getData(cep)
-      .then((data: any) => this.info = data)
-      .catch((error: HttpErrorResponse) => { message: 'Is not possible to search this address. Error:' + error });
+    .then((data: any) => this.info = data)
+    .catch((error: HttpErrorResponse) => { message: 'Is not possible to search this address. Error:' + error });
   }
 }

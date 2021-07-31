@@ -9,9 +9,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { HttpClientModule } from '@angular/common/http';
 import { FieldsService } from './components/fields/fields.service';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
-  declarations: [FieldsComponent],
+  declarations: [FieldsComponent, FooterComponent],
   imports: [
     CommonModule,
     HttpClientModule,
