@@ -4,7 +4,7 @@
 
 .main {
   width: 80%;
-  height: 100vh;
+  height: 90vh;
   display: flex;
   margin: 0 auto;
   flex-direction: column;
@@ -53,9 +53,3 @@
     }
   }
 }
-
-// @media screen and (max-width: 1000px) {
-//   section.cards-content {
-//     flex-direction: column;
-//   }
-// }
